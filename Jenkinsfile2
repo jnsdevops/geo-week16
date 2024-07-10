@@ -4,6 +4,11 @@ pipeline{
      maven 'M2_HOME'
    }
     stages{
+        stage('sonarqube scan'){
+            steps{
+                sh 'mvn sonar:sonar'
+            }
+        }
         stage('maven commandes'){
             steps{
                 sh 'mvn clean'
