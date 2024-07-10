@@ -4,9 +4,11 @@ pipeline{
      maven 'M2_HOME'
    }
     stages{
-        stage('sonarqube scan'){
-            steps{
-                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jnsdevops_geo-week16'
+        stage("SonarQube scan") {          
+            steps {
+             withSonarQubeEnv('sonarserver') {
+            sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jnsdevops_geo-week16'
+                }
             }
         }
         stage('maven commandes'){
