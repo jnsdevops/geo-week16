@@ -25,7 +25,7 @@ pipeline{
             steps{
                 sh 'curl -uadmin:AP4RMvSTrJtDGrfukvPZ9cGCbgg -T \
                 target/bio*.jar\
-                "http://54.234.248.97/:8081/artifactory/geoapp/"'
+                "http://52.91.126.248//:8081/artifactory/geoapp/"'
             }
         }
     }
